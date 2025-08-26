@@ -12,6 +12,7 @@ import java.awt.Color;
 import java.awt.Font;
 import javax.swing.BorderFactory;
 import javax.swing.JTextArea;
+import java.util.ArrayList;
 
 public class Menu extends javax.swing.JFrame {
     final int UB=15;
@@ -484,88 +485,100 @@ public Menu() {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        current=LB;
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(DataStore.list[current].pic)));
+        current=0;
+        jLabel1.setIcon(new javax.swing.ImageIcon(
+    getClass().getResource(DataStore.list.get(current).pic)
+));
        jLabel19.setText(""+(current+1));
         jTextArea1.setText("                  Detail"+
-                "\nProduct code : "+DataStore.list[current].code+
-                "\nName : "+DataStore.list[current].name+
-                "\nType : "+DataStore.list[current].type+ 
-                "\nPrice : "+DataStore.list[current].price+" baht");
+                "\nProduct code : "+DataStore.list.get(current).code+
+                "\nName : "+DataStore.list.get(current).name+
+                "\nType : "+DataStore.list.get(current).type+ 
+                "\nPrice : "+DataStore.list.get(current).price+" baht");
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         int i;
-        for(i=LB;i<DataStore.n;i++){
-            if(DataStore.list[i].type==2){
+        for(i=0;i<DataStore.n;i++){
+            if(DataStore.list.get(i).type==2){
                 current=i;
                 break;
             }
         }
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(DataStore.list[current].pic)));
+        jLabel1.setIcon(new javax.swing.ImageIcon(
+    getClass().getResource(DataStore.list.get(current).pic)
+));
         jLabel19.setText(""+(current+1));
         jTextArea1.setText("                  Detail"+
-                "\nProduct code : "+DataStore.list[current].code+
-                "\nName : "+DataStore.list[current].name+
-                "\nType : "+DataStore.list[current].type+ 
-                "\nPrice : "+DataStore.list[current].price+" baht");
+                "\nProduct code : "+DataStore.list.get(current).code+
+                "\nName : "+DataStore.list.get(current).name+
+                "\nType : "+DataStore.list.get(current).type+ 
+                "\nPrice : "+DataStore.list.get(current).price+" baht");
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         int i;
         for(i=LB;i<DataStore.n;i++){
-            if(DataStore.list[i].type==3){
+            if(DataStore.list.get(i).type==3){
                 current=i;
                 break;
             }
         }
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(DataStore.list[current].pic)));
+        jLabel1.setIcon(new javax.swing.ImageIcon(
+    getClass().getResource(DataStore.list.get(current).pic)
+));
         jLabel19.setText(""+(current+1));
         jTextArea1.setText("                  Detail"+
-                "\nProduct code : "+DataStore.list[current].code+
-                "\nName : "+DataStore.list[current].name+
-                "\nType : "+DataStore.list[current].type+ 
-                "\nPrice : "+DataStore.list[current].price+" baht");
+                "\nProduct code : "+DataStore.list.get(current).code+
+                "\nName : "+DataStore.list.get(current).name+
+                "\nType : "+DataStore.list.get(current).type+ 
+                "\nPrice : "+DataStore.list.get(current).price+" baht");
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
 int i;
-        for(i=LB;i<DataStore.n;i++){
-            if(DataStore.list[i].type==4){
+        for(i=0;i<DataStore.n;i++){
+            if(DataStore.list.get(i).type==4){
                 current=i;
                 break;
             }
         }
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(DataStore.list[current].pic)));
+        jLabel1.setIcon(new javax.swing.ImageIcon(
+    getClass().getResource(DataStore.list.get(current).pic)
+));
         jLabel19.setText(""+(current+1));
         jTextArea1.setText("                  Detail"+
-                "\nProduct code : "+DataStore.list[current].code+
-                "\nName : "+DataStore.list[current].name+
-                "\nType : "+DataStore.list[current].type+ 
-                "\nPrice : "+DataStore.list[current].price+" baht");
+                "\nProduct code : "+DataStore.list.get(current).code+
+                "\nName : "+DataStore.list.get(current).name+
+                "\nType : "+DataStore.list.get(current).type+ 
+                "\nPrice : "+DataStore.list.get(current).price+" baht");
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
 int i;
         for(i=LB;i<DataStore.n;i++){
-            if(DataStore.list[i].type==5){
+            if(DataStore.list.get(i).type==5){
                 current=i;
                 break;
             }
         }
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(DataStore.list[current].pic)));
+        jLabel1.setIcon(new javax.swing.ImageIcon(
+    getClass().getResource(DataStore.list.get(current).pic)
+));
         jLabel19.setText(""+(current+1));
         jTextArea1.setText("                  Detail"+
-                "\nProduct code : "+DataStore.list[current].code+
-                "\nName : "+DataStore.list[current].name+
-                "\nType : "+DataStore.list[current].type+ 
-                "\nPrice : "+DataStore.list[current].price+" baht");
+                "\nProduct code : "+DataStore.list.get(current).code+
+                "\nName : "+DataStore.list.get(current).name+
+                "\nType : "+DataStore.list.get(current).type+ 
+                "\nPrice : "+DataStore.list.get(current).price+" baht");
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         if(current<(DataStore.n-1)){
             current++;
-            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(DataStore.list[current].pic)));
+            jLabel1.setIcon(new javax.swing.ImageIcon(
+    getClass().getResource(DataStore.list.get(current).pic)
+));
         }else if(current<(UB-1)){
                 current++;
                 jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sc/home.png")));
@@ -576,10 +589,10 @@ int i;
         }
         jLabel19.setText(""+(current+1));
         jTextArea1.setText("                  Detail"+
-                "\nProduct code : "+DataStore.list[current].code+
-                "\nName : "+DataStore.list[current].name+
-                "\nType : "+DataStore.list[current].type+ 
-                "\nPrice : "+DataStore.list[current].price+" baht");
+                "\nProduct code : "+DataStore.list.get(current).code+
+                "\nName : "+DataStore.list.get(current).name+
+                "\nType : "+DataStore.list.get(current).type+ 
+                "\nPrice : "+DataStore.list.get(current).price+" baht");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -589,7 +602,9 @@ int i;
             jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sc/home.png")));
         }else if(current>LB){
             current--;
-            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(DataStore.list[current].pic)));
+            jLabel1.setIcon(new javax.swing.ImageIcon(
+    getClass().getResource(DataStore.list.get(current).pic)
+));
         }
         else{
             JOptionPane.showMessageDialog(this, "Underflow!");
@@ -597,10 +612,10 @@ int i;
         }
         jLabel19.setText(""+(current+1));
         jTextArea1.setText("                  Detail"+
-                "\nProduct code : "+DataStore.list[current].code+
-                "\nName : "+DataStore.list[current].name+
-                "\nType : "+DataStore.list[current].type+ 
-                "\nPrice : "+DataStore.list[current].price+" baht");
+                "\nProduct code : "+DataStore.list.get(current).code+
+                "\nName : "+DataStore.list.get(current).name+
+                "\nType : "+DataStore.list.get(current).type+ 
+                "\nPrice : "+DataStore.list.get(current).price+" baht");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed

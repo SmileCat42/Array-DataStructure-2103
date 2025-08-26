@@ -8,7 +8,7 @@ import projectarray.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.Color;
-
+import java.util.ArrayList;
 
 public class Manage extends javax.swing.JFrame {
         final int UB=15;
@@ -24,11 +24,11 @@ public class Manage extends javax.swing.JFrame {
 
         for (int i = 0; i < DataStore.n; i++) {
             model.addRow(new Object[]{i+1,
-                DataStore.list[i].code,
-                DataStore.list[i].name,
-                DataStore.list[i].price,
-                DataStore.list[i].type,
-                DataStore.list[i].pic
+                DataStore.list.get(i).code,
+                DataStore.list.get(i).name,
+                DataStore.list.get(i).price,
+                DataStore.list.get(i).type,
+                DataStore.list.get(i).pic
             });
         }
     }
@@ -36,7 +36,7 @@ public class Manage extends javax.swing.JFrame {
         int LOC=-1;
         int I=0;
         while(I<DataStore.n){
-            if(ITEM==DataStore.list[I].code){
+            if(ITEM==DataStore.list.get(I).code){
                 LOC=I;
                 System.out.println("Found at index : "+I);
                 return LOC;
@@ -532,7 +532,7 @@ try {
         int insertIndex=Integer.parseInt(jTextField7.getText());
         insertIndex-=1;
         for(int i=0;i<DataStore.n;i++){
-            if(insertCode==DataStore.list[i].code){
+            if(insertCode==DataStore.list.get(i).code){
                 System.out.println("This code exist already!");
                 JOptionPane.showMessageDialog(this, "This code exist already!");
                 return;
@@ -553,21 +553,14 @@ try {
             JOptionPane.showMessageDialog(this, "Overflow!");
             return;
         }
-        for(int j=(DataStore.n-1);j>=insertIndex;j--){
-            DataStore.Products temp = new DataStore.Products();
-        temp.code = DataStore.list[j].code;
-        temp.name = DataStore.list[j].name;
-        temp.price = DataStore.list[j].price;
-        temp.type = DataStore.list[j].type;
-        temp.pic = DataStore.list[j].pic;
-             DataStore.list[j+1]=temp;
-        }
         
-        DataStore.list[insertIndex].code=Integer.parseInt(jTextField1.getText());
-        DataStore.list[insertIndex].name=jTextField2.getText();
-        DataStore.list[insertIndex].price=Integer.parseInt(jTextField3.getText());
-        DataStore.list[insertIndex].type=Integer.parseInt(jTextField4.getText());
-        DataStore.list[insertIndex].pic="/sc/home.png";
+        DataStore.Products obj2= new DataStore.Products();
+        obj2.code=Integer.parseInt(jTextField1.getText());
+        obj2.name=jTextField2.getText();
+        obj2.price=Integer.parseInt(jTextField3.getText());
+        obj2.type=Integer.parseInt(jTextField4.getText());
+        obj2.pic="/sc/home.png";
+        DataStore.list.add(insertIndex,obj2);
         DataStore.n++;
         System.out.println("Status : insert complete!");
         jLabel21.setText("Amount :    "+DataStore.n);
@@ -588,14 +581,12 @@ try {
                 jLabel11.setText("Status : not found..");
                 return;
         }
-        jLabel12.setText("Code : "+DataStore.list[index].code);
-        jLabel13.setText("Name : "+DataStore.list[index].name);
-        jLabel14.setText("Price : "+DataStore.list[index].price);
-        jLabel15.setText("Type : "+DataStore.list[index].type);
-        for(int i=index;i<(DataStore.n-1);i++){
-                DataStore.list[i]=DataStore.list[i+1];
-        }
-        DataStore.list[DataStore.n-1]=null;
+        jLabel12.setText("Code : "+DataStore.list.get(index).code);
+        jLabel13.setText("Name : "+DataStore.list.get(index).name);
+        jLabel14.setText("Price : "+DataStore.list.get(index).price);
+        jLabel15.setText("Type : "+DataStore.list.get(index).type);
+
+        DataStore.list.remove(index);
         DataStore.n--;
         System.out.println("Status : delete complete!");
         jLabel11.setText("Status : delete complete!");
