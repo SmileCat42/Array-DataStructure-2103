@@ -538,19 +538,9 @@ try {
                 return;
             }
         }
-        if(DataStore.list.size()>=UB){
-            System.out.println("Array full!");
-            JOptionPane.showMessageDialog(this, "Array full!");
-            return;
-        }
         if(insertIndex<0){
             System.out.println("Underflow!");
             JOptionPane.showMessageDialog(this, "Underflow!");
-            return;
-        }
-        if(insertIndex>=(UB-1)){
-            System.out.println("Overflow!");
-            JOptionPane.showMessageDialog(this, "Overflow!");
             return;
         }
         
