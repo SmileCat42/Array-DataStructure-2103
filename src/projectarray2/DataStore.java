@@ -11,7 +11,6 @@ import java.util.ArrayList;
  * @author Windows10
  */
 public class DataStore {
-    static int n=13;
     public static class Products {
         public int code;
         public String name;
@@ -37,9 +36,7 @@ public class DataStore {
             price = d;
             pic = e;
         }
-        static int getN(){
-            return n;
-        }
+        
         
     }
 

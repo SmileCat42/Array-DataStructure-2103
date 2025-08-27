@@ -35,7 +35,7 @@ public class Menu extends javax.swing.JFrame {
 public Menu() {
     initComponents();
     this.getContentPane().setBackground(new Color(60, 63, 65));
-    jLabel17.setText(""+DataStore.n);
+    jLabel17.setText(""+DataStore.list.size());
     jLabel19.setText(""+(current+1));
     JButton menuBtn = new JButton("Sneaker");
     menuBtn.setFocusPainted(false);
@@ -499,7 +499,7 @@ public Menu() {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         int i;
-        for(i=0;i<DataStore.n;i++){
+        for(i=0;i<DataStore.list.size();i++){
             if(DataStore.list.get(i).type==2){
                 current=i;
                 break;
@@ -518,7 +518,7 @@ public Menu() {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         int i;
-        for(i=LB;i<DataStore.n;i++){
+        for(i=LB;i<DataStore.list.size();i++){
             if(DataStore.list.get(i).type==3){
                 current=i;
                 break;
@@ -537,7 +537,7 @@ public Menu() {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
 int i;
-        for(i=0;i<DataStore.n;i++){
+        for(i=0;i<DataStore.list.size();i++){
             if(DataStore.list.get(i).type==4){
                 current=i;
                 break;
@@ -556,7 +556,7 @@ int i;
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
 int i;
-        for(i=LB;i<DataStore.n;i++){
+        for(i=LB;i<DataStore.list.size();i++){
             if(DataStore.list.get(i).type==5){
                 current=i;
                 break;
@@ -574,7 +574,7 @@ int i;
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if(current<(DataStore.n-1)){
+        if(current<(DataStore.list.size()-1)){
             current++;
             jLabel1.setIcon(new javax.swing.ImageIcon(
     getClass().getResource(DataStore.list.get(current).pic)
@@ -597,7 +597,7 @@ int i;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        if(current>DataStore.n){
+        if(current>DataStore.list.size()){
             current--;
             jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sc/home.png")));
         }else if(current>LB){

@@ -22,7 +22,7 @@ public class Manage extends javax.swing.JFrame {
         model.setRowCount(0);
         
 
-        for (int i = 0; i < DataStore.n; i++) {
+        for (int i = 0; i < DataStore.list.size(); i++) {
             model.addRow(new Object[]{i+1,
                 DataStore.list.get(i).code,
                 DataStore.list.get(i).name,
@@ -35,7 +35,7 @@ public class Manage extends javax.swing.JFrame {
     public int SearchData(int ITEM){
         int LOC=-1;
         int I=0;
-        while(I<DataStore.n){
+        while(I<DataStore.list.size()){
             if(ITEM==DataStore.list.get(I).code){
                 LOC=I;
                 System.out.println("Found at index : "+I);
@@ -51,12 +51,12 @@ public class Manage extends javax.swing.JFrame {
         initComponents();
         this.getContentPane().setBackground(new Color(60, 63, 65));
         loadTableData();
-        jLabel21.setText("Amount :    "+DataStore.n); 
+        jLabel21.setText("Amount :    "+DataStore.list.size()); 
 jTabbedPane1.setPreferredSize(new java.awt.Dimension(200, 400));
 try {
     javax.swing.UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
 } catch (Exception e) {
-    e.printStackTrace();
+    e.printStackTrace(); 
 }
         for (java.awt.event.MouseListener ml : jButton5.getMouseListeners()) {
     jButton5.setBorderPainted(false);
@@ -354,7 +354,7 @@ try {
 
         jLabel19.setText("Storage : ");
 
-        jLabel20.setText("15");
+        jLabel20.setText("-");
 
         jLabel21.setText("Amount : ");
 
@@ -531,14 +531,14 @@ try {
         int insertCode=Integer.parseInt(jTextField1.getText());
         int insertIndex=Integer.parseInt(jTextField7.getText());
         insertIndex-=1;
-        for(int i=0;i<DataStore.n;i++){
+        for(int i=0;i<DataStore.list.size();i++){
             if(insertCode==DataStore.list.get(i).code){
                 System.out.println("This code exist already!");
                 JOptionPane.showMessageDialog(this, "This code exist already!");
                 return;
             }
         }
-        if(DataStore.n>=UB){
+        if(DataStore.list.size()>=UB){
             System.out.println("Array full!");
             JOptionPane.showMessageDialog(this, "Array full!");
             return;
@@ -561,9 +561,8 @@ try {
         obj2.type=Integer.parseInt(jTextField4.getText());
         obj2.pic="/sc/home.png";
         DataStore.list.add(insertIndex,obj2);
-        DataStore.n++;
         System.out.println("Status : insert complete!");
-        jLabel21.setText("Amount :    "+DataStore.n);
+        jLabel21.setText("Amount :    "+DataStore.list.size());
         loadTableData();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -587,10 +586,9 @@ try {
         jLabel15.setText("Type : "+DataStore.list.get(index).type);
 
         DataStore.list.remove(index);
-        DataStore.n--;
         System.out.println("Status : delete complete!");
         jLabel11.setText("Status : delete complete!");
-        jLabel21.setText("Amount :    "+DataStore.n);
+        jLabel21.setText("Amount :    "+DataStore.list.size());
         loadTableData();
         
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -622,9 +620,9 @@ try {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         int PTR;
-        for(int K=0;K<(DataStore.n-1);K++){
+        for(int K=0;K<(DataStore.list.size()-1);K++){
             PTR=0;
-            while(PTR<(DataStore.n-1)-K){
+            while(PTR<(DataStore.list.size()-1)-K){
                 if(DataStore.list.get(K).code>DataStore.list.get(PTR).code){
                     DataStore.Products temp = DataStore.list.get(PTR);
                     DataStore.list.set(PTR,DataStore.list.get(K));
