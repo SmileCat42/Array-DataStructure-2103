@@ -554,7 +554,7 @@ try {
             return;
         }
         
-        DataStore.Products obj2= new DataStore.Products();
+        DataStore.Products obj2 = new DataStore.Products();
         obj2.code=Integer.parseInt(jTextField1.getText());
         obj2.name=jTextField2.getText();
         obj2.price=Integer.parseInt(jTextField3.getText());
@@ -597,7 +597,7 @@ try {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         int SearchCode=  Integer.parseInt(jTextField6.getText());
-        int index=SearchData(SearchCode);
+        int index=DataStore.list.indexOf(SearchCode);
         if(index<0){
             JOptionPane.showMessageDialog(this, "not found!");
             return;
@@ -606,11 +606,11 @@ try {
         model.setRowCount(0);
         
             model.addRow(new Object[]{index+1,
-                DataStore.list[index].code,
-                DataStore.list[index].name,
-                DataStore.list[index].price,
-                DataStore.list[index].type,
-                DataStore.list[index].pic
+                DataStore.list.get(index).code,
+                DataStore.list.get(index).name,
+                DataStore.list.get(index).price,
+                DataStore.list.get(index).type,
+                DataStore.list.get(index).pic
             });
             System.out.println("Status : Search complete");
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -625,12 +625,10 @@ try {
         for(int K=0;K<(DataStore.n-1);K++){
             PTR=0;
             while(PTR<(DataStore.n-1)-K){
-                if(DataStore.list[PTR].code>DataStore.list[PTR+1].code){
-                    DataStore.Products temp = new DataStore.Products();
-                    temp=DataStore.list[PTR];
-                    DataStore.list[PTR]=DataStore.list[PTR+1];
-                    DataStore.list[PTR+1]=temp;
-                    
+                if(DataStore.list.get(K).code>DataStore.list.get(PTR).code){
+                    DataStore.Products temp = DataStore.list.get(PTR);
+                    DataStore.list.set(PTR,DataStore.list.get(K));
+                    DataStore.list.set(K,temp);                   
                 }
                 PTR++;
             }   

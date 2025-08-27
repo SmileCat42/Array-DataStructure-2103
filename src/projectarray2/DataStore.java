@@ -19,6 +19,9 @@ public class DataStore {
         public float price;
         public String pic;
         
+        public Products(){
+            
+        }
         public Products(int a, String b, int c, float d, String e){
             code = a;
             name = b;
