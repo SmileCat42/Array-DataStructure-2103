@@ -577,9 +577,6 @@ int i;
             jLabel1.setIcon(new javax.swing.ImageIcon(
     getClass().getResource(DataStore.list.get(current).pic)
 ));
-        }else if(current<(UB-1)){
-                current++;
-                jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sc/home.png")));
         
         }else{
             JOptionPane.showMessageDialog(this, "Overflow!");
