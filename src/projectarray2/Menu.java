@@ -15,7 +15,7 @@ import javax.swing.JTextArea;
 import java.util.ArrayList;
 
 public class Menu extends javax.swing.JFrame {
-    final int UB=15;
+
     int LB=0;
     int current=-1;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Menu.class.getName());

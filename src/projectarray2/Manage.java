@@ -11,7 +11,6 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 public class Manage extends javax.swing.JFrame {
-        final int UB=15;
         int LB=0;
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Manage.class.getName());
@@ -544,6 +543,11 @@ try {
             return;
         }
         
+        if(insertIndex>(DataStore.list.size())){
+            System.out.println("Overflow!");
+            JOptionPane.showMessageDialog(this, "Overflow!");
+            return;
+        }
         DataStore.Products obj2 = new DataStore.Products();
         obj2.code=Integer.parseInt(jTextField1.getText());
         obj2.name=jTextField2.getText();
@@ -585,11 +589,12 @@ try {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         int SearchCode=  Integer.parseInt(jTextField6.getText());
-        int index=DataStore.list.indexOf(SearchCode);
+        int index=SearchData(SearchCode);
+        System.out.println("Status : "+index);
         if(index<0){
             JOptionPane.showMessageDialog(this, "not found!");
             return;
-        }
+        } 
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0);
         
