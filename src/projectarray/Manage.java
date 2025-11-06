@@ -31,32 +31,49 @@ public class Manage extends javax.swing.JFrame {
             });
         }
     }
-    public int SearchData(int ITEM){
-        int LOC=-1;
-        int I=0;
-        while(I<DataStore.n){
-            if(ITEM==DataStore.list[I].code){
-                LOC=I;
-                System.out.println("Found at index : "+I);
-                return LOC;
-            }else{
-                I++;
-            }
+    public void Insert(DataStore.Products ITEM,int K){ //(int LA[], int N, int K, int ITEM ){  //Inserting Operation
+       int J=DataStore.n-1;
+       while(J>=K){
+           DataStore.list[J+1]=DataStore.list[J];
+           J--;
+       }//end of Step 2 loop
+       DataStore.list[K]=ITEM;
+       DataStore.n++;
+    }
+    public int SEARCH(int ITEM){
+        int LOC=0;
+        while(DataStore.list[LOC].code!=ITEM){
+                LOC++;
         }
-        System.out.println("Not found");
+        if(LOC==DataStore.n){
+                LOC=-1;
+                System.out.println("Not found");
+        }else{
+                System.out.println("Found at "+LOC);
+        }
         return LOC;
     }
+    public void Delete(int K){ //(int LA[], int N, int K, int ITEM ){  //Inserting Operation
+       //int ITEM=LA[K];
+       int N=DataStore.n;
+       for (int J=K;J<N-1;J++){
+           DataStore.list[J]=DataStore.list[J+1];
+       }//end of Step 2 loop        
+       DataStore.n--;
+    }  //Exit
     public Manage() {
         initComponents();
         this.getContentPane().setBackground(new Color(60, 63, 65));
         loadTableData();
         jLabel21.setText("Amount :    "+DataStore.n); 
+        //กล่อง tabbed แยก
 jTabbedPane1.setPreferredSize(new java.awt.Dimension(200, 400));
 try {
     javax.swing.UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
 } catch (Exception e) {
     e.printStackTrace();
 }
+        
         for (java.awt.event.MouseListener ml : jButton5.getMouseListeners()) {
     jButton5.setBorderPainted(false);
     jButton5.setContentAreaFilled(false);
@@ -527,11 +544,13 @@ try {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int insertCode=Integer.parseInt(jTextField1.getText());
-        int insertIndex=Integer.parseInt(jTextField7.getText());
-        insertIndex-=1;
+        int ITEM=Integer.parseInt(jTextField1.getText());
+        int index=Integer.parseInt(jTextField7.getText());
+        index-=1;
+        int J = DataStore.n;
+ 
         for(int i=0;i<DataStore.n;i++){
-            if(insertCode==DataStore.list[i].code){
+            if(ITEM==DataStore.list[i].code){
                 System.out.println("This code exist already!");
                 JOptionPane.showMessageDialog(this, "This code exist already!");
                 return;
@@ -542,32 +561,29 @@ try {
             JOptionPane.showMessageDialog(this, "Array full!");
             return;
         }
-        if(insertIndex<0){
+        if(index<0){
             System.out.println("Underflow!");
             JOptionPane.showMessageDialog(this, "Underflow!");
             return;
         }
-        if(insertIndex>=(UB-1)){
+        if(index>=(UB-1)){
             System.out.println("Overflow!");
             JOptionPane.showMessageDialog(this, "Overflow!");
             return;
         }
-        for(int j=(DataStore.n-1);j>=insertIndex;j--){
             DataStore.Products temp = new DataStore.Products();
-        temp.code = DataStore.list[j].code;
-        temp.name = DataStore.list[j].name;
-        temp.price = DataStore.list[j].price;
-        temp.type = DataStore.list[j].type;
-        temp.pic = DataStore.list[j].pic;
-             DataStore.list[j+1]=temp;
-        }
+           /* temp.code = DataStore.list[J].code;
+            temp.name = DataStore.list[J].name;
+            temp.price = DataStore.list[J].price;
+            temp.type = DataStore.list[J].type;
+            temp.pic = DataStore.list[J].pic;*/
         
-        DataStore.list[insertIndex].code=Integer.parseInt(jTextField1.getText());
-        DataStore.list[insertIndex].name=jTextField2.getText();
-        DataStore.list[insertIndex].price=Integer.parseInt(jTextField3.getText());
-        DataStore.list[insertIndex].type=Integer.parseInt(jTextField4.getText());
-        DataStore.list[insertIndex].pic="/sc/home.png";
-        DataStore.n++;
+        temp.code=Integer.parseInt(jTextField1.getText());
+        temp.name=jTextField2.getText();
+        temp.price=Integer.parseInt(jTextField3.getText());
+        temp.type=Integer.parseInt(jTextField4.getText());
+        temp.pic="/sc/home.png";
+        Insert(temp,index);
         System.out.println("Status : insert complete!");
         jLabel21.setText("Amount :    "+DataStore.n);
         loadTableData();
@@ -581,7 +597,7 @@ try {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         int delCode = Integer.parseInt(jTextField5.getText());
-        int index=SearchData(delCode);
+        int index=SEARCH(delCode);
         if(index<0){
                 System.out.println("Status : not found");
                 jLabel11.setText("Status : not found..");
@@ -591,11 +607,8 @@ try {
         jLabel13.setText("Name : "+DataStore.list[index].name);
         jLabel14.setText("Price : "+DataStore.list[index].price);
         jLabel15.setText("Type : "+DataStore.list[index].type);
-        for(int i=index;i<(DataStore.n-1);i++){
-                DataStore.list[i]=DataStore.list[i+1];
-        }
-        DataStore.list[DataStore.n-1]=null;
-        DataStore.n--;
+        Delete(index);
+        DataStore.list[DataStore.n]=null;
         System.out.println("Status : delete complete!");
         jLabel11.setText("Status : delete complete!");
         jLabel21.setText("Amount :    "+DataStore.n);
@@ -605,7 +618,7 @@ try {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         int SearchCode=  Integer.parseInt(jTextField6.getText());
-        int index=SearchData(SearchCode);
+        int index=SEARCH(SearchCode);
         if(index<0){
             JOptionPane.showMessageDialog(this, "not found!");
             return;

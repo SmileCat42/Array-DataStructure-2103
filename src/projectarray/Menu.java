@@ -582,7 +582,11 @@ int i;
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        if(current==-1){
+            JOptionPane.showMessageDialog(this, "Underflow!");
+            System.out.println("Underflow");
+            return;
+        }
         if(current>DataStore.n){
             current--;
             jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sc/home.png")));
