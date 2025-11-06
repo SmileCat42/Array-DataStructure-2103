@@ -25,4 +25,4 @@ And java.util.ArrayList และการใช้คำสั่งอาเ�
 
 <br>
 <h2 style="text-indent: 2em; text-decoration: underline;">การทำงานของอัลกอริทึม</h2>
-📄<a href="GHarray.pdf" target="_blank">ดูรายงานผลความเข้าใจผ่านการพิมพ์ open report code explanation (Array)</a>
+📄<a href="src/CodeExplanation/GHarray.pdf" target="_blank">ดูรายงานผลความเข้าใจผ่านการพิมพ์ open report code explanation (Array)</a>
