@@ -18,7 +18,8 @@ And java.util.ArrayList และการใช้คำสั่งอาเ�
 
 <br>
 
-## ภาษาไทย
+<a id="ภาษาไทย"></a>
+
 <h1 align="center"><b>COS2103</b></h1>
 <h3 align="center">Data Structure and Algorithm โครงสร้างข้อมูลและอัลกอริทึม</h3>
 
@@ -45,7 +46,7 @@ And java.util.ArrayList และการใช้คำสั่งอาเ�
 <h2 style="text-indent: 2em; text-decoration: underline;">ข้อสอบ</h2>
 <br><br>
 
-## english
+<a id="english"></a>
 
 <h2 style="text-indent: 2em; text-decoration: underline;">Project Objective</h2>
 &nbsp;&nbsp;&nbsp;&nbsp;Since data structures such as Array, Stack, Queue, and LinkedList are not highly complex, the instructor would like students to gain a true understanding of them by expressing our knowledge through programming in Apache NetBeans. This method also serves as basic practice in using program. The project applying these structures to commonly used algorithms such as insertion, deletion, and searching, among others.
