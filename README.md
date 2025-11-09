@@ -46,6 +46,14 @@ And java.util.ArrayList และการใช้คำสั่งอาเ�
 <h2 style="text-indent: 2em; text-decoration: underline;">ข้อสอบ</h2>
 <br><br>
 
+<h2 style="text-indent: 2em; text-decoration: underline;">ขั้นตอนการเปิดโปรแกรม</h2>
+1. ติดตั้งโปรแกรม Apache Netbeans
+<br>2. ดาวน์โหลดโปรเจคนี้ลงเครื่อง (ปุ่ม CODE สีเขียว)
+<br>3. เปิดโปรแกรม Netbeans เลือกที่ File > Open Project เลือกไฟล์เป็นโปรเจคนี้ที่ดาวน์โหลดไว้
+<br>4. สังเกตุแถบซ้ายมือจะมีชื่อไฟล์ที่โหลดมาไอคอนถ้วยกาแฟ กดคลิ็กดรอปดาวน์ลงมา กดลงมาต่อที่ Source Packages กดลงมาต่อที่ projectstack (หรือกดที่ projectstackVer2 เพื่อดูฉบับ util.stack)
+<br>5. คลิ๊กขวาที่ชื่อไฟล์ Front.java แล้วเลือก Run File
+<br><br><br><br>
+
 <a id="english"></a>
 
 <h2 style="text-indent: 2em; text-decoration: underline;">Project Objective</h2>
@@ -68,3 +76,10 @@ And java.util.ArrayList และการใช้คำสั่งอาเ�
 <br>
 <br>
 <h2 style="text-indent: 2em; text-decoration: underline;">Exam</h2>
+<br><br>
+<h2 style="text-indent: 2em; text-decoration: underline;">How to open the program</h2>
+1. Install Apache NetBeans IDE
+<br>2. Download this project to your computer (click green CODE button)
+<br>3. Open NetBeans, go to File > Open Project, and select this downloaded project
+<br>4. On the left panel, you will see the project name with coffee cup icon, click dropdown arrow to expand it, then open Source Packages → projectstack (→ projectstackVer2 for open util.stack version)
+<br>5. Right-click on the file Front.java and select Run File to execute the program.
