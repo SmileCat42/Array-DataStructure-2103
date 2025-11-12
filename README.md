@@ -43,8 +43,10 @@ And java.util.ArrayList และการใช้คำสั่งอาเ�
 <br><br>    **พิมพ์มือเองทั้งหมด
 <br>
 <br>
-<h2 style="text-indent: 2em; text-decoration: underline;">ข้อสอบ</h2>
-<br><br>
+<h2 style="text-indent: 2em; text-decoration: underline;">ผลการเรียนรู้</h2>
+📄 <a href="src/CodeExplanation/exam2103.pdf" target="_blank">ข้อสอบ</a>
+<br>
+<br>
 
 <h2 style="text-indent: 2em; text-decoration: underline;">ขั้นตอนการเปิดโปรแกรม</h2>
 1. ติดตั้งโปรแกรม Apache Netbeans
@@ -75,8 +77,10 @@ And java.util.ArrayList และการใช้คำสั่งอาเ�
 <br><br>    **manually created
 <br>
 <br>
-<h2 style="text-indent: 2em; text-decoration: underline;">Exam</h2>
-<br><br>
+<h2 style="text-indent: 2em; text-decoration: underline;">Learning Outcomes</h2>
+📄 <a href="src/CodeExplanation/exam2103.pdf" target="_blank">Exam</a>
+<br>
+<br>
 <h2 style="text-indent: 2em; text-decoration: underline;">How to open the program</h2>
 1. Install Apache NetBeans IDE
 <br>2. Download this project to your computer (click green CODE button)
